@@ -1,0 +1,54 @@
+<HTML lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta "viewport=" content="width=device-width, initial-scale=1.0">
+		
+		<title>Homepage</title>
+		<meta name="description" content="Project of FastAPI PyWebView PyInstaller">
+		<meta name="author" content="w21ty">
+
+		<link rel="stylesheet" href="index.css">
+
+		<script src="scripts/populateDomUser.js" defer></script>
+		<script src="scripts/populateDomLLM.js" defer></script>
+		<script src="scripts/queryButton.js" defer></script>
+	</head>
+
+	<body>
+	     <div id="outerMostDiv" class="outerMostDivClass">
+	         <div id="innerMostDiv" class="innerMostDivClass">
+
+				<div class="mainGrid">
+					<!-- CONTAINS MY 3 SECTIONS -->
+
+					<!-- LEFT SECTION –> LLM RESPONSE -->
+					<section    class="llmSection box">
+						<header class="llmHeader"><p style="margin: 0; padding: 2px;">Loading...</p></header>
+						<div class="llmBody">
+							<textarea class="llmResponse" name="llmResponse" id="llmResponse"></textarea>
+						</div>
+					</section>
+
+					<!-- LEFT BOTTOM SECTION –> USER QUESTION -->
+					<section class="userInputSection box">
+						<div class="userInputRow">
+							<textarea class="userInputField" id="userInputField" placeholder="Text box for llm"></textarea>
+						<button class="queryButton" id="queryButton">→</button>
+						</div>
+					</section>
+
+					<!-- RIGHT SECTION -> USER NOTES -->
+					<section    class="notesSection box">
+						<ul class="notesDirectory" id="notesDirectory"></ul>
+						<header class="notesHeader"><button class="createNoteButton" id="createNoteButton">Create Note Page</button></header>
+						<div    class="notesBody">
+							<textarea class="userNotes" name="userNotes" id="userNotes"></textarea>
+						</div>
+					</section>
+				</div>
+			</div>
+	     </div>			
+	</body>
+
+</HTML>

@@ -1,0 +1,24 @@
+To allow scripts to run within the project:
+
+```
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+Script valid for current powershell process. Once terminated the command should be run again.
+
+
+To allow scripts to run within the \User\"currentUser" directory:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Script valid for the user.
+
+To remove the script running access to the user: 
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope CurrentUser
+```
+
+Resets the permission granted to allow script execution for user.

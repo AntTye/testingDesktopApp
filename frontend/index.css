@@ -1,0 +1,223 @@
+/* 
+Contanins -> html and body. Inside contains layout structure.
+Layout structure Contains -> outerbox, innerbox layout. Inside resides grid and grid sections.
+Grid Section Contains -> boxes, 2 cols (1st col has 2 row, 2nd col has 1 row). Inside resides section html objects. 
+*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;   /* remove scrollbars */
+}
+
+.outerMostDivClass {
+    min-height: 100vh; 
+    padding-top: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 2%;       
+    background-color: #e6e5e5;
+    border: 4px solid darkblue;
+    box-sizing: border-box;
+
+    display: flex;
+}
+
+.innerMostDivClass {
+    background-color: #e6e5e5;
+    flex: 1;
+    overflow: auto;
+}
+
+/* Above this is for the boxed box layout I want with padding. */
+
+/* This is the grid system I designed. 2 collumns. 1st col has 2 rows and 2nd col has just the col spanning entire height */
+.mainGrid {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;     /* left equal to right size*/
+    grid-template-rows: 8fr 2fr;        /* tall top row, shorter bottom */
+    grid-template-areas:
+        "llm   notes"
+        "input notes";
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+.box {
+    border: 2px solid #000000;
+    box-sizing: border-box;
+}
+
+/* LLM box (top-left, 1st col, 1st row) */
+.llmSection {
+    grid-area: llm;
+    background-color: #ffffff; 
+    display: flex;
+    flex-direction: column;
+}
+
+.llmHeader {
+    background-color: #9b5c5c;
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.llmBody {
+    flex: 1;
+    overflow: auto;
+}
+
+.llmResponse {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 20px;
+}
+
+/* User input for LLM (bottom-left, 1st col, 2nd row) */
+.userInputSection {
+    grid-area: input;
+    background-color: #ffffff;      
+    position: relative;             /* anchor for absolute button */
+    padding: 8px 10px;
+    box-sizing: border-box;
+}
+
+.userInputRow {
+    height: 100%;
+}
+
+.userInputField {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    padding-bottom: 60px;           
+    font-size: 14px;
+    resize: none;                   
+    overflow-y: auto;
+}
+
+.queryButton {
+    position: absolute; /* button is always bottom-right */
+    right: 12px;
+    bottom: 10px;
+    padding: 4px 8px 4px 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/* User notes (right, 2nd col) */
+.notesSection {
+    grid-area: notes;
+    background-color: #26267b;
+    display: flex;
+    flex-direction: column;
+}
+
+.notesDirectory {
+    list-style: none;
+    margin: 0;
+    padding: 4px 6px;
+    border-bottom: 3px solid #000000;
+    background-color: #111144;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.notesDirectory li {
+    font-size: 20px;
+    padding: 2px 4px;
+    cursor: pointer;
+    color: #eee;
+    display: flex;
+    align-items: center;
+}
+
+.notesDirectory li span {
+    flex-grow: 1;
+}
+
+.notesDirectory li.active {
+    background-color: #333388;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.notesHeader {
+    display: flex;
+    align-items: center;
+    padding: 4px 6px;
+    border-bottom: 3px solid #000000;
+    background-color: #111144;
+    gap: 8px;
+}
+
+.createNoteButton {
+    width: 100%;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #4f7cff, #3b5bdb);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(79, 124, 255, 0.25);
+    transition: 
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.1s ease;
+}
+
+.createNoteButton:hover {
+    background: linear-gradient(135deg, #5c88ff, #4a6cff);
+    box-shadow: 0 6px 14px rgba(79, 124, 255, 0.35);
+    transform: translateY(-1px);
+}
+
+.createNoteButton:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(79, 124, 255, 0.25);
+}
+
+.deleteNoteBtn {
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 25%;
+    color: #ff0000;
+    cursor: pointer;
+    padding: 0 6px;
+}
+
+.deleteNoteBtn:hover {
+    background: #aa0000;
+}
+
+.notesBody {
+    flex: 1;
+    color: #ffffff;
+    overflow: auto;
+}
+
+.userNotes {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    box-sizing: border-box;
+    padding: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}

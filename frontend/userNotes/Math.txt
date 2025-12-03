@@ -1,0 +1,6 @@
+The quadratic formula is used to find the solutions (or roots) of a quadratic equation in the standard form ax² + bx + c = 0. The formula is given by:
+x = (-b ± √(b² - 4ac)) / (2a)
+where:
+a, b, and c are the coefficients of the equation, and a cannot be zero. 
+
+The ± symbol indicates that there are generally two solutions for the quadratic equation. 
