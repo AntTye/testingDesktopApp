@@ -1,0 +1,19 @@
+# Python virtual environments
+testingVirtualEnv/
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build artifacts
+build/
+dist/
+
+# OS junk
+.DS_Store
+Thumbs.db
