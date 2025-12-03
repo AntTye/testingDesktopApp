@@ -6,7 +6,13 @@ Local LLM context window specialization and specification.
 
 LLM knows what the user wants as context.
 
-To run project you must have ollama installed and any of its local llm installed on your device with enough vram. If not then you will not be able to prompt llm for any answers.
+To run project you must have ollama installed. You'd also need to download any one of its many local llm on your device with enough vram so the model doesn't crash. If not then you will not be able to prompt llm for any answers. You can run ollama llms in your terminal:
+
+```
+PS C:\Users\w21ty>ollama run "model_name"
+
+PS C:\Users\w21ty>ollama run llama3:8b 
+```
 
 # Minimal Viable Product
 
