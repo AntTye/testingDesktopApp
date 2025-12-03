@@ -6,6 +6,8 @@ Local LLM context window specialization and specification.
 
 LLM knows what the user wants as context.
 
+To run project you must have ollama installed and any of its local llm installed on your device with enough vram. If not then you will not be able to prompt llm for any answers.
+
 # Minimal Viable Product
 
 1. [x] Integration of any quantized model. 
@@ -16,7 +18,7 @@ LLM knows what the user wants as context.
 6. [x] User inputs results in LLM outputs.
 7. [x] Start/Executable in file format.
 8. [x] No on-line requirements.
-9. [x]  must like using it.
+9. [x] Tyler Wang must like using it.
 
 # Start Date
 
